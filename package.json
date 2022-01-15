@@ -4,7 +4,8 @@
   "description": "",
   "main": "hello-sequelize.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "git ci -am \"changes in: $(git diff --name-only | tr  '\n' ' ')\"; git push"
   },
   "keywords": [],
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",

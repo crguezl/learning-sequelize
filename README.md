@@ -1,0 +1,1 @@
+* [getting Satrted](https://sequelize.org/v7/manual/getting-started.html)
