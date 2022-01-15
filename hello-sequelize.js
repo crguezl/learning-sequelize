@@ -35,7 +35,7 @@ Contact.init(
     }
   });
   
-  console.log(jane, janeCreated);
+  console.log(jane.firstName, janeCreated);
 
   
   const [peter, peterCreated] = await Contact.findOrCreate({
@@ -46,7 +46,7 @@ Contact.init(
     }
   });
 
-  console.log(jane, janeCreated);
+  console.log(peter.firstName, janeCreated);
 
   let contacts = await Contact.findAll();
   console.log(contacts.map(c => c.getDataValue('firstName')));
