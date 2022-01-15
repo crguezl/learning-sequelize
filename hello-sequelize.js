@@ -36,7 +36,6 @@ Contact.init(
   });
   
   console.log(jane.firstName, janeCreated);
-
   
   const [peter, peterCreated] = await Contact.findOrCreate({
     where: { email: "peter@pum.com"},
@@ -46,7 +45,14 @@ Contact.init(
     }
   });
 
-  console.log(peter.firstName, janeCreated);
+  console.log(peter.firstName, peterCreated);
+
+  // Example of updating Jane
+
+  if (jane.firstName == 'jane') jane.firstName = "Ada Jane Rigoberta"
+  else jane.firstName = "jane";
+  // the name is still "Jane" in the database
+  await jane.save();
 
   let contacts = await Contact.findAll();
   console.log(contacts.map(c => c.getDataValue('firstName')));
