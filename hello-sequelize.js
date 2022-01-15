@@ -35,6 +35,12 @@ Contact.init(
     }
   });
   
+  Contact.create({
+    email: "crguezl@ull.edu.es",
+    firstName: "Casiano",
+    lastName: "Rodriguez",
+  });
+
   console.log(jane.firstName, janeCreated);
   
   const [peter, peterCreated] = await Contact.findOrCreate({
