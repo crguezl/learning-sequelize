@@ -55,7 +55,13 @@ Contact.init(
   await jane.save();
 
   let contacts = await Contact.findAll();
-  console.log(contacts.map(c => c.getDataValue('firstName')));
+  console.log(contacts.map(c =>[c.getDataValue('firstName'), c.getDataValue('id')]));
+
+  let deleted = await jane.destroy();
+  console.log(deleted.getDataValue('firstName'));
+  
+  contacts = await Contact.findAll();
+  console.log(contacts.map(c =>[c.getDataValue('firstName'), c.getDataValue('id')]));
 
   await sequelize.close()
 })();
