@@ -35,8 +35,8 @@ Contact.init(
     }
   });
   
-  Contact.create({
-    email: "crguezl@ull.edu.es",
+  const casiano = Contact.create({
+    email: "crguezl@ull.es",
     firstName: "Casiano",
     lastName: "Rodriguez",
   });
@@ -66,8 +66,16 @@ Contact.init(
   let deleted = await jane.destroy();
   console.log(deleted.getDataValue('firstName'));
   
+  
+  let c = await Contact.update(
+    { email: "crguezl@ull.edu.es"},
+    { where: { firstName: "Casiano" } }
+  );
+
+  console.log(c);
+
   contacts = await Contact.findAll();
-  console.log(contacts.map(c =>[c.getDataValue('firstName'), c.getDataValue('id')]));
+  console.log(contacts.map(c =>[c.getDataValue('firstName'), c.getDataValue('id'), c.getDataValue('email')]));
 
   await sequelize.close()
 })();
